@@ -12,6 +12,8 @@ import FieldDashboard from "../page/FieldDashboard";
 import Notfound from "../page/notfound.jsx";
 import AdminDashboard from "../component/AdminDashboard";
 import Contact from "../page/contact";
+import Technicien from '../page/Technicien'; // Add this import
+import TechnicienSuperieur  from "../page/TechnicienSuperieur.jsx"; 
 
 export const router = createBrowserRouter([
     {
@@ -33,9 +35,17 @@ export const router = createBrowserRouter([
                 path: "/admin-dashboard",
                 element: <AdminDashboard />,
             },
+             {
+                path: "/Technicien",
+                element: <Technicien />,
+            },
             {
                 path: "/authentification",
                 element: <Authentification />,
+            },
+             {
+                path: "/TechnicienSuperieur",
+                element: <TechnicienSuperieur />,
             },
             {
     path: "/contact",

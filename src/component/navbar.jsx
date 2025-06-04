@@ -66,7 +66,7 @@ export default function Navbar() {
 
                         <button
                                         onMouseOver={() => setShowdiplomDropdown(!showdiplomDropdown)}
-                                    
+                                        onClick={() => setShowdiplomDropdown(!showdiplomDropdown)}
                                         className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-700 hover:bg-gray-50 transition-colors duration-200"
                                     >
                                      Diplomes
@@ -75,11 +75,12 @@ export default function Navbar() {
                                         </svg>
                                     </button>
                                      {showdiplomDropdown && (
-                                         <div className="fixed  mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                                                onMouseLeave={() => setShowdiplomDropdown(false)}
+                                         <div       onMouseLeave={() => setShowdiplomDropdown(false)} 
+                                         className="fixed  mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                                          
                                              <div className="py-1">
                                                  <Link
-                                                     to="/diplomas"
+                                                     to="/Technicien"
                                                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                                      onClick={() => setShowdiplomDropdown(false)}
                                                  >
@@ -89,7 +90,7 @@ export default function Navbar() {
                                              </div>
                                              <div className="py-1">
                                                  <Link
-                                                     to="/diplomas"
+                                                     to="/TechnicienSuperieur"
                                                      className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                                      onClick={() => setShowdiplomDropdown(false)}
                                                  >
