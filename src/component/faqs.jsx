@@ -28,7 +28,7 @@ export default function Faqs() {
     ]
   
     return (
-        <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 md:px-8">
+        <section className="leading-relaxed max-w-screen-xl mt-12 mx-auto px-4 md:px-8 mb-18">
             <div className="space-y-3 text-center">
                 <h1 className="text-3xl text-gray-800 font-semibold">
                     Questions fréquemment posées
