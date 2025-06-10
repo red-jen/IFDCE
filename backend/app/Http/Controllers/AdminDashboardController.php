@@ -55,16 +55,7 @@ class AdminDashboardController extends Controller
         return response()->json($users);
     }
 
-    public function getUserApplications($userId)
-    {
-        $user = User::with(['diplomaFields.diploma', 'diplomaFields.field'])
-                   ->findOrFail($userId);
 
-        return response()->json([
-            'user' => $user,
-            'applications' => $user->diplomaFields
-        ]);
-    }
 
     public function updateUserRole(Request $request, $userId)
     {
@@ -115,4 +106,129 @@ class AdminDashboardController extends Controller
             'application' => $application->load(['user', 'diploma', 'field'])
         ]);
     }
+
+  
+
+public function getAllEnrollments(Request $request)
+{
+    $query = UserDiplomaField::with(['user', 'diploma', 'field']);
+
+    // Filter by status if provided
+    if ($request->has('status')) {
+        $query->where('status', $request->get('status'));
+    }
+
+    // Filter by diploma if provided
+    if ($request->has('diploma_id')) {
+        $query->where('diploma_id', $request->get('diploma_id'));
+    }
+
+    // Filter by field if provided
+    if ($request->has('field_id')) {
+        $query->where('field_id', $request->get('field_id'));
+    }
+
+    // Search by user name or email
+    if ($request->has('search')) {
+        $search = $request->get('search');
+        $query->whereHas('user', function($q) use ($search) {
+            $q->where('name', 'like', "%{$search}%")
+              ->orWhere('email', 'like', "%{$search}%");
+        });
+    }
+
+    $enrollments = $query->orderBy('created_at', 'desc')
+                        ->paginate($request->get('per_page', 15));
+
+    return response()->json([
+        'message' => 'Enrollments retrieved successfully',
+        'enrollments' => $enrollments
+    ]);
+}
+public function getUsersByDiplomaAndField()
+{
+    $enrollments = UserDiplomaField::with(['user', 'diploma', 'field'])
+        ->get()
+        ->groupBy(['diploma.name', 'field.name']);
+
+    $formatted = [];
+    
+    foreach ($enrollments as $diplomaName => $fields) {
+        $formatted[$diplomaName] = [];
+        foreach ($fields as $fieldName => $users) {
+            $formatted[$diplomaName][$fieldName] = [
+                'users' => $users->pluck('user'),
+                'count' => $users->count(),
+                'status_breakdown' => $users->groupBy('status')->map->count()
+            ];
+        }
+    }
+
+    return response()->json([
+        'message' => 'Users grouped by diploma and field retrieved successfully',
+        'data' => $formatted
+    ]);
+}
+
+
+
+public function getEnrollmentStats()
+{
+    // Most popular diplomas
+    $popularDiplomas = UserDiplomaField::select('diploma_id')
+        ->selectRaw('COUNT(*) as enrollment_count')
+        ->with('diploma')
+        ->groupBy('diploma_id')
+        ->orderBy('enrollment_count', 'desc')
+        ->get();
+
+    // Most popular fields
+    $popularFields = UserDiplomaField::select('field_id')
+        ->selectRaw('COUNT(*) as enrollment_count')
+        ->with('field')
+        ->groupBy('field_id')
+        ->orderBy('enrollment_count', 'desc')
+        ->get();
+
+    // Enrollment status breakdown
+    $statusBreakdown = UserDiplomaField::select('status')
+        ->selectRaw('COUNT(*) as count')
+        ->groupBy('status')
+        ->get();
+
+    // Recent enrollments
+    $recentEnrollments = UserDiplomaField::with(['user', 'diploma', 'field'])
+        ->orderBy('created_at', 'desc')
+        ->limit(10)
+        ->get();
+
+    return response()->json([
+        'message' => 'Enrollment statistics retrieved successfully',
+        'popular_diplomas' => $popularDiplomas,
+        'popular_fields' => $popularFields,
+        'status_breakdown' => $statusBreakdown,
+        'recent_enrollments' => $recentEnrollments
+    ]);
+
+}
+
+public function getUserApplications($userId)
+{
+    $user = User::with(['diplomaFields.diploma', 'diplomaFields.field'])
+               ->findOrFail($userId);
+
+    // Group applications by status
+    $applicationsByStatus = $user->diplomaFields->groupBy('status');
+
+    return response()->json([
+        'user' => $user,
+        'applications' => $user->diplomaFields,
+        'applications_by_status' => $applicationsByStatus,
+        'total_applications' => $user->diplomaFields->count(),
+        'approved_count' => $user->diplomaFields->where('status', 'approved')->count(),
+        'pending_count' => $user->diplomaFields->where('status', 'pending')->count(),
+        'rejected_count' => $user->diplomaFields->where('status', 'rejected')->count()
+    ]);
+}
+
 }
