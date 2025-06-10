@@ -1,5 +1,7 @@
 import React from 'react';
 import { BookOpen, Building2, Users, PenTool, Monitor , Truck, Hotel } from 'lucide-react';
+import { href } from 'react-router-dom';
+import { Link, useLocation } from "react-router-dom";
 
 const Technicien = () => {
   const programs = [
@@ -128,9 +130,12 @@ const Technicien = () => {
                 
                 {/* Action Buttons */}
                 <div className="flex space-x-3">
+                   <Link
+                                                     to="/techaidecomptable">
                   <button className={`flex-1 bg-gradient-to-r ${program.color} text-white py-2 px-4 rounded-lg text-sm font-medium hover:opacity-90 transition-all duration-200 transform hover:scale-105`}>
                     En savoir plus
                   </button>
+                  </Link>
                   <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-200">
                     Brochure
                   </button>
