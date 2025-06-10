@@ -305,17 +305,8 @@ export default function Contact() {
                     <div className="bg-white rounded-lg shadow-md overflow-hidden">
                         {/* Map Placeholder */}
                         <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
-                            {/* TODO: Add Google Maps or Leaflet map here */}
-                            <div className="text-center">
-                                <svg className="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                                <p className="text-gray-500">Carte interactive à ajouter</p>
-                                <p className="text-sm text-gray-400 mt-2">
-                                    Immeuble N° 22, Rue Jbel Moussa, Agdal, Rabat, Maroc
-                                </p>
-                            </div>
+                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.714402618682!2d-6.848885346918367!3d33.9943205392242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda76c905acc4b17%3A0xc15b5e4b1a0705a!2sN%C2%B0%2022%20Rue%20Jbel%20Moussa%2C%20Rabat%2010000!5e1!3m2!1sfr!2sma!4v1749080156845!5m2!1sfr!2sma" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            
                         </div>
                     </div>
                 </div>
