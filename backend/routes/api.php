@@ -49,3 +49,22 @@ Route::middleware('auth:sanctum')->post('/logout', [LoginController::class, 'log
      Route::get('/admin/dashboard', function() {
             return response()->json(['message' => 'Admin dashboard data']);
         });
+
+
+    
+
+// Route::middleware(['auth:api', 'admin'])->group(function () {
+    // Existing admin routes...
+    
+    // New enrollment routes
+    Route::get('/admin/enrollments', [AdminDashboardController::class, 'getAllEnrollments']);
+    Route::get('/admin/enrollments/by-diploma-field', [AdminDashboardController::class, 'getUsersByDiplomaAndField']);
+    Route::get('/admin/enrollments/stats', [AdminDashboardController::class, 'getEnrollmentStats']);
+// });
+
+
+
+Route::get('/admin/enrollments', [AdminDashboardController::class, 'getAllEnrollments']);
+Route::get('/admin/enrollments/stats', [AdminDashboardController::class, 'getEnrollmentStats']);
+Route::get('/admin/users/{userId}/applications', [AdminDashboardController::class, 'getUserApplications']);
+Route::put('/admin/applications/{applicationId}/status', [AdminDashboardController::class, 'updateApplicationStatus']);
