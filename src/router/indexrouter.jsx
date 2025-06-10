@@ -14,6 +14,10 @@ import AdminDashboard from "../component/AdminDashboard";
 import Contact from "../page/contact";
 import Technicien from '../page/Technicien'; // Add this import
 import TechnicienSuperieur  from "../page/TechnicienSuperieur.jsx"; 
+import Techaidecomptable from "../page/techaidecomptable.jsx"; // Add this import
+import LicenceProfessionnelle from "../page/LicenceProfessionnelle.jsx"; // Add this import
+import VAEPage from "../page/VAEPage.jsx"; // Add this import
+import MasterProfessionnel from "../page/MasterProfessionnel.jsx"; // Add this import
 
 export const router = createBrowserRouter([
     {
@@ -44,13 +48,29 @@ export const router = createBrowserRouter([
                 element: <Authentification />,
             },
              {
+                path: "/techaidecomptable",
+                element: <Techaidecomptable />,
+            },
+            {
                 path: "/TechnicienSuperieur",
                 element: <TechnicienSuperieur />,
             },
             {
-    path: "/contact",
-    element: <Contact />,
-},
+                path: "/LicenceProfessionnelle",
+                element: <LicenceProfessionnelle />,
+            },
+            {
+                path: "/VAEPage",
+                element: <VAEPage />,
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
+            },
+            {
+                path: "/MasterProfessionnel",
+                element: <MasterProfessionnel />,
+            },
             // Protected Admin Routes
             {
                 path: "/diploma-dashboard",
