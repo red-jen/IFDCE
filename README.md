@@ -1,108 +1,185 @@
-<<<<<<< HEAD
-# ifdce
+# IFDCE Website (devloped by REDA JENHAJI)
 
+A modern, responsive website for the Institute of Training, Skills Development and Excellence (IFDCE) built with Vite and React.
 
+## 🚀 Features
 
-## Getting started
+- **Modern UI/UX**: Clean, professional design showcasing IFDCE's educational programs
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Fast Performance**: Built with Vite for lightning-fast development and production builds
+- **Interactive Components**: Dynamic course catalogs, program information, and contact forms
+- **Multi-language Support**: French and English content support
+- **SEO Optimized**: Meta tags and structured data for better search visibility
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 🛠️ Tech Stack
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+- **Frontend**: React 18
+- **Build Tool**: Vite
+- **Styling**: CSS3 / Tailwind CSS
+- **Icons**: Lucide React
+- **Deployment**: Vercel / Netlify
 
-## Add your files
+## 📋 Prerequisites
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+- Node.js (version 16 or higher)
+- npm or yarn package manager
+
+## 🚀 Getting Started
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ifdce-website.git
+cd ifdce-website
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📝 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality
+- `npm run lint:fix` - Fix ESLint issues automatically
+
+## 📁 Project Structure
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/first-reacte-project/ifdce.git
-git branch -M main
-git push -uf origin main
+ifdce-website/
+├── public/
+│   ├── images/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── common/
+│   │   ├── sections/
+│   │   └── ui/
+│   ├── pages/
+│   ├── styles/
+│   ├── utils/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── vite.config.js
 ```
 
-## Integrate with your tools
+## 🎨 Key Components
 
-- [ ] [Set up project integrations](https://gitlab.com/first-reacte-project/ifdce/-/settings/integrations)
+- **Header**: Navigation with IFDCE logo and menu
+- **Hero Section**: Main banner with call-to-action
+- **Programs**: Showcase of diploma and certification programs
+- **About**: Institution presentation and mission
+- **Services**: VAE, online training, and consulting services
+- **Contact**: Contact form and institution information
+- **Footer**: Links and additional information
 
-## Collaborate with your team
+## 🌐 Deployment
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+### Build for Production
 
-## Test and Deploy
+```bash
+npm run build
+```
 
-Use the built-in continuous integration in GitLab.
+The build files will be generated in the `dist/` directory.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Deploy to Vercel
 
-***
+1. Install Vercel CLI:
+```bash
+npm install -g vercel
+```
 
-# Editing this README
+2. Deploy:
+```bash
+vercel --prod
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Deploy to Netlify
 
-## Suggestions for a good README
+1. Build the project:
+```bash
+npm run build
+```
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+2. Drag and drop the `dist/` folder to Netlify's deploy interface
 
-## Name
-Choose a self-explaining name for your project.
+## 🔧 Configuration
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Environment Variables
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Create a `.env` file in the root directory:
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+```env
+VITE_API_URL=your_api_url_here
+VITE_CONTACT_EMAIL=contact@ifdce.com
+VITE_GOOGLE_ANALYTICS_ID=your_ga_id
+```
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Vite Configuration
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+The `vite.config.js` file includes:
+- React plugin configuration
+- Build optimizations
+- Path aliases for cleaner imports
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## 📱 Browser Support
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+## 🤝 Contributing
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## 📄 License
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## License
-For open source projects, say how it is licensed.
+## 👥 Team
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-=======
-# React + Vite
+- **Project Lead**: [Your Name]
+- **Frontend Developer**: [Developer Name]
+- **UI/UX Designer**: [Designer Name]
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📞 Support
 
-Currently, two official plugins are available:
+For support and questions:
+- Email: dev@ifdce.com
+- Website: [IFDCE Official Website]
+- Issues: [GitHub Issues](https://github.com/yourusername/ifdce-website/issues)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Roadmap
 
-## Expanding the ESLint configuration
+- [ ] Add student portal integration
+- [ ] Implement course enrollment system
+- [ ] Add payment gateway integration
+- [ ] Multi-language content management
+- [ ] Advanced search functionality
+- [ ] Mobile app companion
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> b79c991 (firstcommit)
+---
+
+Built with ❤️ for IFDCE - Making excellence accessible to everyone, everywhere.
