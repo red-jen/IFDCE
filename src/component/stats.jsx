@@ -2,7 +2,7 @@ export default function Stats() {
 
      const stats = [
         {
-            data: "+107 K",
+            data: "+107 ",
             title: "DOSSIER TRAITÉS"
         },
         {
@@ -10,7 +10,7 @@ export default function Stats() {
             title: "ÉCOLES MEMBRES"
         },
         {
-            data: "10K+",
+            data: "10+",
             title: "DIPLÔMÉS"
         },
         {
