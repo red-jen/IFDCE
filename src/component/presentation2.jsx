@@ -17,7 +17,7 @@ export default function Presentation2() {
               
                 <div className="flex-1 max-w-lg py-5 sm:mx-auto sm:text-center lg:max-w-max lg:text-left">
                     <h3 className="text-3xl text-gray-800 font-semibold md:text-4xl">
-                        Une école 100% en ligne <span className="text-indigo-600"></span>
+                        Une école 100%  hybride <span className="text-indigo-600"></span>
                     </h3>
                     <p className="text-gray-500 leading-relaxed mt-3">
                             Travail, famille, distance… Vous n’avez pas le temps pour des cours en présentiel ?IFDCE vous forme 100% à distance.Avec des diplômes reconnus, des cours flexibles, et un suivi humain.#EcoleEnLigne #DiplômeFrançais #EtudierChezSoi
