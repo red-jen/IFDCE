@@ -1,6 +1,6 @@
 # IFDCE Website (developed by REDA JENHAJI)
 
-A modern, full-stack website for the Institute of Training, Skills Development and Excellence (IFDCE) built with Vite, React, and a robust backend API.
+A modern, full-stack website for the Institute of Training, Skills Development and Excellence (IFDCE) built with Vite, React, and a robust Laravel backend API.
 
 ## 🚀 Features
 
@@ -10,9 +10,9 @@ A modern, full-stack website for the Institute of Training, Skills Development a
 - **Interactive Components**: Dynamic course catalogs, program information, and contact forms
 - **Multi-language Support**: French and English content support
 - **SEO Optimized**: Meta tags and structured data for better search visibility
-- **RESTful API**: Comprehensive backend API for data management
-- **Authentication & Authorization**: Secure user management system
-- **Database Integration**: Persistent data storage with relational database
+- **RESTful API**: Comprehensive Laravel backend API for data management
+- **Authentication & Authorization**: Laravel Sanctum secure user management system
+- **Database Integration**: Persistent data storage with MySQL database
 - **Admin Dashboard**: Content management system for administrators
 
 ## 🛠️ Tech Stack
@@ -26,26 +26,28 @@ A modern, full-stack website for the Institute of Training, Skills Development a
 - **HTTP Client**: Axios
 
 ### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: PostgreSQL / MySQL
-- **ORM**: Prisma / Sequelize
-- **Authentication**: JWT (JSON Web Tokens)
-- **Validation**: Joi / Zod
-- **File Upload**: Multer
-- **Email Service**: Nodemailer
+- **Framework**: Laravel 10
+- **Database**: MySQL
+- **ORM**: Eloquent ORM
+- **Authentication**: Laravel Sanctum
+- **Validation**: Laravel Form Requests
+- **File Upload**: Laravel Storage
+- **Email Service**: Laravel Mail with SMTP
+- **API**: Laravel API Resources
 
 ### DevOps & Deployment
 - **Frontend Deployment**: Vercel / Netlify
-- **Backend Deployment**: Railway / Heroku / Digital Ocean
-- **Database Hosting**: PlanetScale / Supabase
+- **Backend Deployment**: DigitalOcean / AWS / Shared Hosting
+- **Database Hosting**: MySQL Server / PlanetScale
 - **CI/CD**: GitHub Actions
 
 ## 📋 Prerequisites
 
 - Node.js (version 16 or higher)
 - npm or yarn package manager
-- PostgreSQL or MySQL database
+- PHP 8.1 or higher
+- Composer
+- MySQL 8.0 or higher
 - Git
 
 ## 🚀 Getting Started
@@ -68,42 +70,59 @@ yarn install
 3. Install backend dependencies:
 ```bash
 cd backend
-npm install
-# or
-yarn install
+composer install
 ```
 
 4. Set up environment variables:
 ```bash
 # Frontend (.env)
-VITE_API_URL=http://localhost:3001/api
+VITE_API_URL=http://localhost:8000/api
 VITE_CONTACT_EMAIL=contact@ifdce.com
 VITE_GOOGLE_ANALYTICS_ID=your_ga_id
 
-# Backend (backend/.env)
-DATABASE_URL=postgresql://user:password@localhost:5432/ifdce_db
-JWT_SECRET=your_jwt_secret_key
-JWT_EXPIRES_IN=7d
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_email_password
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
+# Backend (.env)
+APP_NAME="IFDCE Website"
+APP_ENV=local
+APP_KEY=base64:your_app_key_here
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=ifdce_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+
+SANCTUM_STATEFUL_DOMAINS=localhost:5173,127.0.0.1:5173
+SESSION_DOMAIN=localhost
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_email@gmail.com
+MAIL_PASSWORD=your_app_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@ifdce.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+FILESYSTEM_DISK=public
 ```
 
-5. Set up the database:
+5. Set up the Laravel backend:
 ```bash
 cd backend
-npm run db:migrate
-npm run db:seed
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan storage:link
 ```
 
-6. Start the backend server:
+6. Start the Laravel backend server:
 ```bash
 cd backend
-npm run dev
+php artisan serve
 ```
 
 7. Start the frontend development server:
@@ -123,13 +142,17 @@ npm run dev
 - `npm run lint` - Run ESLint for code quality
 - `npm run lint:fix` - Fix ESLint issues automatically
 
-### Backend Scripts
-- `npm run dev` - Start development server with nodemon
-- `npm run start` - Start production server
-- `npm run test` - Run test suite
-- `npm run db:migrate` - Run database migrations
-- `npm run db:seed` - Seed database with initial data
-- `npm run db:reset` - Reset database
+### Backend Scripts (Laravel Artisan)
+- `php artisan serve` - Start development server
+- `php artisan migrate` - Run database migrations
+- `php artisan migrate:fresh --seed` - Fresh migration with seeding
+- `php artisan db:seed` - Seed database with initial data
+- `php artisan make:controller` - Create new controller
+- `php artisan make:model` - Create new model
+- `php artisan make:migration` - Create new migration
+- `php artisan route:list` - List all routes
+- `php artisan cache:clear` - Clear application cache
+- `php artisan config:clear` - Clear configuration cache
 
 ## 📁 Project Structure
 
@@ -152,49 +175,59 @@ ifdce-website/
 │   ├── App.jsx
 │   └── main.jsx
 ├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   ├── middleware/
-│   │   ├── utils/
-│   │   ├── config/
-│   │   └── app.js
-│   ├── prisma/
+│   ├── app/
+│   │   ├── Http/
+│   │   │   ├── Controllers/
+│   │   │   ├── Middleware/
+│   │   │   └── Requests/
+│   │   ├── Models/
+│   │   └── Mail/
+│   ├── database/
 │   │   ├── migrations/
-│   │   ├── seeds/
-│   │   └── schema.prisma
-│   ├── tests/
-│   └── server.js
+│   │   ├── seeders/
+│   │   └── factories/
+│   ├── routes/
+│   │   ├── api.php
+│   │   └── web.php
+│   ├── storage/
+│   │   └── app/public/
+│   ├── config/
+│   └── resources/views/
 ├── package.json
 └── vite.config.js
 ```
 
 ## 🔌 API Endpoints
 
-### Authentication
-- `POST /api/auth/register` - User registration
-- `POST /api/auth/login` - User login
-- `POST /api/auth/logout` - User logout
-- `GET /api/auth/me` - Get current user
+### Authentication (Laravel Sanctum)
+- `POST /api/register` - User registration
+- `POST /api/login` - User login
+- `POST /api/logout` - User logout
+- `GET /api/user` - Get authenticated user
+- `POST /api/forgot-password` - Password reset request
+- `POST /api/reset-password` - Reset password
 
 ### Programs & Courses
 - `GET /api/programs` - Get all programs
-- `GET /api/programs/:id` - Get program by ID
+- `GET /api/programs/{id}` - Get program by ID
 - `POST /api/programs` - Create new program (Admin)
-- `PUT /api/programs/:id` - Update program (Admin)
-- `DELETE /api/programs/:id` - Delete program (Admin)
+- `PUT /api/programs/{id}` - Update program (Admin)
+- `DELETE /api/programs/{id}` - Delete program (Admin)
 
 ### Contact & Inquiries
 - `POST /api/contact` - Submit contact form
 - `GET /api/inquiries` - Get all inquiries (Admin)
-- `PUT /api/inquiries/:id` - Update inquiry status (Admin)
+- `PUT /api/inquiries/{id}` - Update inquiry status (Admin)
 
 ### Users & Admin
 - `GET /api/users` - Get all users (Admin)
-- `GET /api/users/:id` - Get user by ID
-- `PUT /api/users/:id` - Update user profile
-- `DELETE /api/users/:id` - Delete user (Admin)
+- `GET /api/users/{id}` - Get user by ID
+- `PUT /api/users/{id}` - Update user profile
+- `DELETE /api/users/{id}` - Delete user (Admin)
+
+### File Upload
+- `POST /api/upload` - Upload files (images, documents)
+- `GET /api/files/{filename}` - Get uploaded file
 
 ## 🎨 Key Components
 
@@ -208,13 +241,14 @@ ifdce-website/
 - **Footer**: Links and additional information
 - **Admin Dashboard**: Content management interface
 
-### Backend Components
-- **Authentication Middleware**: JWT token validation
-- **Error Handling**: Centralized error management
-- **Validation Middleware**: Request data validation
-- **File Upload**: Image and document handling
-- **Email Service**: Automated email notifications
-- **Database Models**: User, Program, Inquiry, Admin models
+### Backend Components (Laravel)
+- **Controllers**: Handle HTTP requests and responses
+- **Models**: Eloquent ORM models for database interaction
+- **Middleware**: Authentication and request filtering
+- **Form Requests**: Input validation and authorization
+- **Mail Classes**: Email notifications and templates
+- **Resources**: API response formatting
+- **Seeders**: Database seeding for initial data
 
 ## 🌐 Deployment
 
@@ -225,19 +259,28 @@ npm run build
 vercel --prod
 ```
 
-### Backend Deployment (Railway)
+### Backend Deployment (DigitalOcean/AWS)
 
-1. Create a Railway account and new project
-2. Connect your GitHub repository
-3. Set environment variables in Railway dashboard
-4. Deploy automatically on push to main branch
+1. Set up your server with PHP 8.1+ and MySQL
+2. Clone your repository
+3. Install dependencies:
+```bash
+composer install --no-dev --optimize-autoloader
+```
+4. Set up environment variables
+5. Run migrations:
+```bash
+php artisan migrate --force
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
 
-### Database Setup (PlanetScale)
+### Database Setup (MySQL)
 
-1. Create a PlanetScale database
-2. Get connection string
-3. Update DATABASE_URL in environment variables
-4. Run migrations in production
+1. Create MySQL database
+2. Update .env with database credentials
+3. Run migrations and seeders
 
 ## 🔧 Configuration
 
@@ -252,19 +295,32 @@ VITE_GOOGLE_ANALYTICS_ID=your_ga_id
 
 Backend (`backend/.env`):
 ```env
-NODE_ENV=production
-PORT=3001
-DATABASE_URL=your_database_connection_string
-JWT_SECRET=your_super_secret_jwt_key
-JWT_EXPIRES_IN=7d
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-CORS_ORIGIN=https://your-frontend-url.com
+APP_NAME="IFDCE Website"
+APP_ENV=production
+APP_KEY=base64:your_production_key_here
+APP_DEBUG=false
+APP_URL=https://your-backend-url.com
+
+DB_CONNECTION=mysql
+DB_HOST=your_db_host
+DB_PORT=3306
+DB_DATABASE=your_production_db
+DB_USERNAME=your_db_user
+DB_PASSWORD=your_db_password
+
+SANCTUM_STATEFUL_DOMAINS=your-frontend-domain.com
+SESSION_DOMAIN=.your-domain.com
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_email@gmail.com
+MAIL_PASSWORD=your_app_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=noreply@ifdce.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+FILESYSTEM_DISK=public
 ```
 
 ## 🧪 Testing
@@ -275,12 +331,11 @@ npm run test
 npm run test:coverage
 ```
 
-### Backend Testing
+### Backend Testing (Laravel)
 ```bash
 cd backend
-npm run test
-npm run test:watch
-npm run test:coverage
+php artisan test
+php artisan test --coverage
 ```
 
 ## 📱 Browser Support
@@ -320,16 +375,18 @@ For support and questions:
 ## 🎯 Roadmap
 
 ### Phase 1 (Current)
-- [x] Frontend implementation
-- [x] Backend API development
-- [x] Database design
-- [x] Authentication system
+- [x] Frontend implementation with React & Vite
+- [x] Laravel backend API development
+- [x] MySQL database design
+- [x] Laravel Sanctum authentication system
+- [x] Axios API integration
 
 ### Phase 2 (In Progress)
 - [ ] Student portal integration
 - [ ] Course enrollment system
 - [ ] Payment gateway integration
 - [ ] Admin dashboard enhancement
+- [ ] File upload system optimization
 
 ### Phase 3 (Upcoming)
 - [ ] Multi-language content management
@@ -337,6 +394,7 @@ For support and questions:
 - [ ] Mobile app companion
 - [ ] Real-time notifications
 - [ ] Advanced analytics dashboard
+- [ ] Laravel Queue implementation
 
 ---
 
