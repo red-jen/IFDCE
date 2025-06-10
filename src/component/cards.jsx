@@ -91,13 +91,13 @@ export default function Cards() {
         img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
         href: "javascript:void(0)"
     },
- {
-    title: "Qui sommes-nous ?",
-    desc: "L’IFDCE est un institut spécialisé dans la formation professionnelle à distance. Nous proposons :- Des diplômes reconnus en France et en Europe- La validation des acquis de l’expérience (VAE)- Des certifications en droit, management, informatique, etc.- Un accompagnement sur mesure pour les professionnels et les entreprises.",
-    img: "https://www.eagles-security.com/public/img/big/eea8b832fcae4563cbf8057f89f21c31.jpg",
-    href: "javascript:void(0)"
-}
-,
+//  {
+//     title: "Qui sommes-nous ?",
+//     desc: "L’IFDCE est un institut spécialisé dans la formation professionnelle à distance. Nous proposons :- Des diplômes reconnus en France et en Europe- La validation des acquis de l’expérience (VAE)- Des certifications en droit, management, informatique, etc.- Un accompagnement sur mesure pour les professionnels et les entreprises.",
+//     img: "https://www.eagles-security.com/public/img/big/eea8b832fcae4563cbf8057f89f21c31.jpg",
+//     href: "javascript:void(0)"
+// }
+// ,
   
 ]
     return (
