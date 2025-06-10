@@ -1,5 +1,7 @@
 import React from 'react';
 import { Building2, Code, Calculator, Briefcase, Palette } from 'lucide-react';
+import addimge from "../assets/jefferson-sees-QGOWg4m3C7o-unsplash.jpg";
+import passion from "../assets/passion.jpg";
 
 const TechnicienSuperieur = () => {
   const programs = [
@@ -56,8 +58,85 @@ const TechnicienSuperieur = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen">
+      {/* Split Hero Section */}
+      <div className="relative min-h-screen mb-130 sm:mb-180 md:mb-240 lg:mb-60 xl:mb-10 max-h-screen lg:flex">
+        {/* Left Content */}
+        <div className="lg:w-1/2 bg-gradient-to-br from-gray-900 via-gray-700 to-amber-400 flex items-center justify-center p-8 lg:p-16" >
+          <div className="max-w-lg text-white">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-8">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              Formation
+              <span className="block text-yellow-400">Technicien</span>
+              <span className="block">Supérieur</span>
+            </h1>
+            
+            <p className="text-lg lg:text-xl mb-8 opacity-90 leading-relaxed">
+              Développez une expertise technique avancée et prenez des responsabilités dans votre domaine professionnel.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>5 spécialités disponibles</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>Formation de niveau supérieur</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                <span>Accès aux postes d'encadrement</span>
+              </div>
+            </div>
+            
+            <button className="mt-8 bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              Découvrir nos programmes
+            </button>
+          </div>
+        </div>
+        
+        {/* Right Image */}
+        <div className="lg:w-1/2 relative overflow-hidden border-l-gray-900 " style={{ borderLeftWidth: '4px' }}>
+          <img 
+            src={addimge} 
+            alt="Formation Technicien Supérieur"
+            className="w-full h-full object-cover "
+            style={{ filter: 'brightness(0.8)' , backdropFilter: 'blur(10px)',   }}
+          />
+          
+          {/* Floating Cards */}
+          <div className="absolute inset-0 flex items-center justify-center p-8">
+            <div className="grid grid-cols-2 gap-4">
+              {programs.slice(0, 4).map((program, index) => (
+                <div 
+                  key={program.id}
+                  className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+                  style={{
+                    animationDelay: `${index * 200}ms`,
+                    animation: 'fadeInUp 0.8s ease-out forwards'
+                  }}
+                >
+                  <div className={`inline-flex p-2 rounded-lg ${program.bgColor} ${program.textColor} mb-2`}>
+                    {program.icon}
+                  </div>
+                  <h3 className="font-semibold text-gray-900 text-sm leading-tight">
+                    {program.title.split(' ').slice(0, 3).join(' ')}...
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Rest of content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-16">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6">
@@ -197,7 +276,7 @@ const TechnicienSuperieur = () => {
 
         {/* Call to Action Section */}
         <div className="mt-16 text-center">
-          <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 rounded-2xl p-10 text-white overflow-hidden">
+          <div className="relative bg-gradient-to-b from-gray-900 via-gray-500 to-transparent sm:bg-gradient-to-r from-gray-900 via-gray-500 to-amber-400 rounded-2xl p-10 text-white overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.4%22%3E%3Ccircle%20cx%3D%227%22%20cy%3D%227%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
