@@ -1,22 +1,22 @@
 export default function Stats() {
 
-     const stats = [
-        {
-            data: "+107 ",
-            title: "DOSSIER TRAITÉS"
-        },
-        {
-            data: "148",
-            title: "ÉCOLES MEMBRES"
-        },
-        {
-            data: "10+",
-            title: "DIPLÔMÉS"
-        },
-        {
-            data: "21+",
-            title: "PAYS REPRÉSENTÉS"
-        },
+    const stats = [
+       {
+          data: "25+",
+          title: "DOSSIERS TRAITÉS"
+       },
+       {
+          data: "12",
+          title: "ÉCOLES PARTENAIRES"
+       },
+       {
+          data: "50+",
+          title: "ÉTUDIANTS INSCRITS"
+       },
+       {
+          data: "5",
+          title: "PAYS REPRÉSENTÉS"
+       },
     ]
     return (
      <section className="py-14">
