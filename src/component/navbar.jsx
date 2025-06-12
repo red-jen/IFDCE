@@ -7,6 +7,7 @@ import techsp from "../assets/icons8-graduation-cap-50.png";
 import license from "../assets/icons8-graduation-scroll-50.png";
 import vaeicon from "../assets/icons8-graduation-scroll-100.png";
 import master from "../assets/icons8-internship-50 (1).png";
+import ifdce from "../assets/ifdcedark-removebg-preview.png";
 
 import { 
     ChevronDown, 
@@ -100,9 +101,10 @@ export default function Navbar() {
     return (
         <nav className={`fixed w-full z-50 top-0 transition-all duration-300 ${
             scrolled 
-                ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-                : 'bg-gray-800 shadow-lg border-b border-gray-200'
+                ? 'bg-white/95 backdrop-blur-md shadow-lg border-b ' 
+                : 'bg-gray-800 shadow-lg border-b '
         }`}>
+            
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo Section */}
@@ -110,11 +112,12 @@ export default function Navbar() {
                         to="/" 
                         className="flex items-center space-x-3 flex-shrink-0 group"
                     >
-                        <img 
-                            src={ifdclogo} 
-                            className="h-10 w-auto transition-transform duration-200 group-hover:scale-105" 
-                            alt="IFDC" 
-                        />
+                       {scrolled 
+    ? <img src={ifdce} alt="IFDC Logo" className="h-30 w-auto transition-transform duration-200 group-hover:scale-105" />
+    : <img src={ifdclogo} alt="IFDC Logo" className="h-10 w-auto transition-transform duration-200 group-hover:scale-105" />
+}
+                            
+                        
                     </Link>
 
                     {/* Desktop Navigation */}
