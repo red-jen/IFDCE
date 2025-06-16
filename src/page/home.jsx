@@ -8,6 +8,7 @@ import Partener from '../component/partener';
 import Cards from '../component/cards';
 import Presentation2 from '../component/presentation2';
 import Bloc from '../component/bloc';
+import  AdditionalInfo from '../component/additionalInfo';
 
 export default function Home() {
 
@@ -19,10 +20,7 @@ return (
     <Presentation2/>
     <Presentation/>
   <Stats/>
-   
-    
-    
-    
+   <AdditionalInfo/>
    </>
     );
     

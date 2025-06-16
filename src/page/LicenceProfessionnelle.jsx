@@ -209,12 +209,12 @@ const LicenceProfessionnelle = () => {
                 
                 {/* Action Buttons */}
                 <div className="flex space-x-3">
-                  <button className={`flex-1 bg-gradient-to-r ${program.color} text-white py-3 px-4 rounded-xl text-sm font-semibold hover:opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md`}>
+                  {/* <button className={`flex-1 bg-gradient-to-r ${program.color} text-white py-3 px-4 rounded-xl text-sm font-semibold hover:opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md`}>
                     En savoir plus
                   </button>
                   <button className="px-4 py-3 border-2 border-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
                     Programme
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>

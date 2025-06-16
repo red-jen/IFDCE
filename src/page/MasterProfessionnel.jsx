@@ -38,61 +38,61 @@ const programs = [
         image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
         category: "Coaching"
     },
-    // {
-    //     id: 4,
-    //     title: "MASTER PROFESSIONNEL BANQUE PRIVÉE INTERNATIONALE",
-    //     description: "Former des professionnels aptes à prendre en charge un portefeuille de clientèles haut de gamme. Leurs missions sont la gestion de patrimoine et le conseil en investissement...",
-    //     icon: <Banknote className="w-8 h-8" />,
-    //     color: "from-green-500 to-green-600",
-    //     bgColor: "bg-green-50",
-    //     textColor: "text-green-700",
-    //     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //     category: "Finance"
-    // },
-    // {
-    //     id: 5,
-    //     title: "MASTER PROFESSIONNEL COMPTABILITÉ, CONTRÔLE DE GESTION, AUDIT",
-    //     description: "Le Master, à finalité professionnelle, forme en deux années des spécialistes de la comptabilité, du contrôle de gestion et de l'audit dans les organisations modernes...",
-    //     icon: <Calculator className="w-8 h-8" />,
-    //     color: "from-indigo-500 to-indigo-600",
-    //     bgColor: "bg-indigo-50",
-    //     textColor: "text-indigo-700",
-    //     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //     category: "Finance"
-    // },
-    // {
-    //     id: 6,
-    //     title: "MASTER PROFESSIONNEL CHARGÉ D'AFFAIRES ENTREPRISES ET INSTITUTIONS",
-    //     description: "Le Master Chargé d'affaires entreprises et institutions est un cursus entièrement échelonné sur deux années pour former des experts en relation client B2B...",
-    //     icon: <Building2 className="w-8 h-8" />,
-    //     color: "from-teal-500 to-teal-600",
-    //     bgColor: "bg-teal-50",
-    //     textColor: "text-teal-700",
-    //     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //     category: "Business"
-    // },
-    // {
-    //     id: 7,
-    //     title: "MASTER PROFESSIONNEL DÉCORATION D'INTÉRIEUR",
-    //     description: "Le Master en Décoration intérieure se déroule en 2 ans (cours et ateliers / missions en entreprise) et s'adresse aux créatifs passionnés par l'aménagement d'espaces...",
-    //     icon: <Palette className="w-8 h-8" />,
-    //     color: "from-pink-500 to-rose-600",
-    //     bgColor: "bg-pink-50",
-    //     textColor: "text-pink-700",
-    //     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //     category: "Design"
-    // },
-    // {
-    //     id: 8,
-    //     title: "MASTER PROFESSIONNEL GÉNIE CIVIL - CONCEPTION, CONSTRUCTION, INGÉNIERIE DU BÂTIMENT",
-    //     description: "Le parcours Conception Construction Ingénierie du Bâtiment prépare les étudiants aux métiers d'ingénierie du secteur du BTP et de la construction durable...",
-    //     icon: <Construction className="w-8 h-8" />,
-    //     color: "from-orange-500 to-red-600",
-    //     bgColor: "bg-orange-50",
-    //     textColor: "text-orange-700",
-    //     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-    //     category: "Ingénierie"
-    // }
+    {
+        id: 4,
+        title: "MASTER PROFESSIONNEL BANQUE PRIVÉE INTERNATIONALE",
+        description: "Former des professionnels aptes à prendre en charge un portefeuille de clientèles haut de gamme. Leurs missions sont la gestion de patrimoine et le conseil en investissement...",
+        icon: <Banknote className="w-8 h-8" />,
+        color: "from-green-500 to-green-600",
+        bgColor: "bg-green-50",
+        textColor: "text-green-700",
+        image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        category: "Finance"
+    },
+    {
+        id: 5,
+        title: "MASTER PROFESSIONNEL COMPTABILITÉ, CONTRÔLE DE GESTION, AUDIT",
+        description: "Le Master, à finalité professionnelle, forme en deux années des spécialistes de la comptabilité, du contrôle de gestion et de l'audit dans les organisations modernes...",
+        icon: <Calculator className="w-8 h-8" />,
+        color: "from-indigo-500 to-indigo-600",
+        bgColor: "bg-indigo-50",
+        textColor: "text-indigo-700",
+        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        category: "Finance"
+    },
+    {
+        id: 6,
+        title: "MASTER PROFESSIONNEL CHARGÉ D'AFFAIRES ENTREPRISES ET INSTITUTIONS",
+        description: "Le Master Chargé d'affaires entreprises et institutions est un cursus entièrement échelonné sur deux années pour former des experts en relation client B2B...",
+        icon: <Building2 className="w-8 h-8" />,
+        color: "from-teal-500 to-teal-600",
+        bgColor: "bg-teal-50",
+        textColor: "text-teal-700",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        category: "Business"
+    },
+    {
+        id: 7,
+        title: "MASTER PROFESSIONNEL DÉCORATION D'INTÉRIEUR",
+        description: "Le Master en Décoration intérieure se déroule en 2 ans (cours et ateliers / missions en entreprise) et s'adresse aux créatifs passionnés par l'aménagement d'espaces...",
+        icon: <Palette className="w-8 h-8" />,
+        color: "from-pink-500 to-rose-600",
+        bgColor: "bg-pink-50",
+        textColor: "text-pink-700",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        category: "Design"
+    },
+    {
+        id: 8,
+        title: "MASTER PROFESSIONNEL GÉNIE CIVIL - CONCEPTION, CONSTRUCTION, INGÉNIERIE DU BÂTIMENT",
+        description: "Le parcours Conception Construction Ingénierie du Bâtiment prépare les étudiants aux métiers d'ingénierie du secteur du BTP et de la construction durable...",
+        icon: <Construction className="w-8 h-8" />,
+        color: "from-orange-500 to-red-600",
+        bgColor: "bg-orange-50",
+        textColor: "text-orange-700",
+        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        category: "Ingénierie"
+    }
 ];
 
   const categories = ["Tous", "Psychologie", "Management", "Coaching", "Finance", "Business", "Design", "Ingénierie"];
@@ -251,7 +251,7 @@ const programs = [
                 </div>
                 
 {/* Action Buttons */}
-<div className="flex space-x-3">
+{/* <div className="flex space-x-3">
   {program.button ? (
     <button className={`flex-1 bg-gradient-to-r ${program.button} text-white py-3 px-4 rounded-xl text-sm font-semibold hover:opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md`}>
       En savoir plus
@@ -264,7 +264,7 @@ const programs = [
                   <button className="px-4 py-3 border-2 border-gray-200 text-gray-700 rounded-xl text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-200">
                     Programme
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
