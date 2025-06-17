@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+// import React from 'react';
+
 export default function Stats() {
     const stats = [
        {
@@ -29,9 +32,11 @@ export default function Stats() {
                         Chez IFDC, vous pouvez obtenir une licence ou un master reconnu grâce à la Validation des Acquis de l'Expérience. 
                         Votre parcours professionnel devient votre plus grande force.
                     </p>
-                    <button className="mt-6 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                        Savoir plus
-                    </button>
+                    <Link to="Contact" className="inline-block">
+                        <button className="mt-6 px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200">
+                            Savoir plus
+                        </button>
+                    </Link>
                 </div>
                 {/* <div className="mt-12">
                     <ul className="flex flex-col items-center justify-center gap-y-10 sm:flex-row sm:flex-wrap lg:divide-x">
