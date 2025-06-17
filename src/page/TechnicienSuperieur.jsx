@@ -1,5 +1,17 @@
 import React from 'react';
-import { Building2, Code, Calculator, Briefcase, Palette } from 'lucide-react';
+// import { Building2, Code, Calculator, Briefcase, Palette } from 'lucide-react';
+import { 
+  Building2, 
+  Code, 
+  Calculator, 
+  Briefcase, 
+  Palette,
+  Settings,
+  Shield,
+  Zap,
+  MapPin,
+  TrendingUp
+} from "lucide-react";
 import addimge from "../assets/jefferson-sees-QGOWg4m3C7o-unsplash.jpg";
 import passion from "../assets/passion.jpg";
 
@@ -54,7 +66,57 @@ const TechnicienSuperieur = () => {
       bgColor: "bg-purple-50",
       textColor: "text-purple-700",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-    }
+    },
+    {
+  id: 6,
+  title: "Technicien Supérieur en Maintenance Industrielle",
+  description: "Formation avancée en maintenance préventive et prédictive des équipements industriels. Maîtrise des technologies de surveillance, gestion de la maintenance assistée par ordinateur (GMAO) et optimisation des performances industrielles.",
+  icon: <Settings className="w-8 h-8" />,
+  color: "from-red-500 to-red-600",
+  bgColor: "bg-red-50",
+  textColor: "text-red-700",
+  image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+},
+{
+  id: 7,
+  title: "Technicien Supérieur en Réseaux et Sécurité Informatique",
+  description: "Spécialisation en administration des réseaux complexes, cybersécurité et protection des données. Compétences en audit sécuritaire, mise en place de solutions de sécurité et gestion des incidents de sécurité informatique.",
+  icon: <Shield className="w-8 h-8" />,
+  color: "from-cyan-500 to-cyan-600",
+  bgColor: "bg-cyan-50",
+  textColor: "text-cyan-700",
+  image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+},
+{
+  id: 8,
+  title: "Technicien Supérieur en Énergies Renouvelables et Efficacité Énergétique",
+  description: "Formation approfondie en conception et gestion de projets d'énergies renouvelables. Expertise en audit énergétique, dimensionnement d'installations solaires/éoliennes et optimisation de la consommation énergétique.",
+  icon: <Zap className="w-8 h-8" />,
+  color: "from-emerald-500 to-emerald-600",
+  bgColor: "bg-emerald-50",
+  textColor: "text-emerald-700",
+  image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+},
+{
+  id: 9,
+  title: "Technicien Supérieur en Géomatique et Topographie",
+  description: "Maîtrise des systèmes d'information géographique (SIG), télédétection et techniques de levés topographiques avancés. Compétences en cartographie numérique, modélisation 3D du terrain et gestion de bases de données spatiales.",
+  icon: <MapPin className="w-8 h-8" />,
+  color: "from-teal-500 to-teal-600",
+  bgColor: "bg-teal-50",
+  textColor: "text-teal-700",
+  image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+},
+{
+  id: 10,
+  title: "Technicien Supérieur en Marketing Digital et E-commerce",
+  description: "Formation complète en stratégies marketing digitales, gestion de campagnes publicitaires en ligne et développement e-commerce. Expertise en SEO/SEA, analytics web, réseaux sociaux et conversion digitale.",
+  icon: <TrendingUp className="w-8 h-8" />,
+  color: "from-pink-500 to-pink-600",
+  bgColor: "bg-pink-50",
+  textColor: "text-pink-700",
+  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+}
   ];
 
   return (
