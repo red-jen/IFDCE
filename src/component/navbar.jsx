@@ -8,6 +8,7 @@ import license from "../assets/icons8-graduation-scroll-50.png";
 import vaeicon from "../assets/icons8-graduation-scroll-100.png";
 import master from "../assets/icons8-internship-50 (1).png";
 import ifdce from "../assets/ifdcedark-removebg-preview.png";
+import { useNavbar } from '../context/NavbarContext';
 
 import { 
     ChevronDown, 
@@ -24,10 +25,11 @@ import {
 } from "lucide-react";
 
 export default function Navbar() {
+     const { showDiplomDropdown, setShowDiplomDropdown } = useNavbar();
     const [isOpen, setIsOpen] = useState(false);
     const [showAdminDropdown, setShowAdminDropdown] = useState(false);
     const [showUserDropdown, setShowUserDropdown] = useState(false);
-    const [showDiplomDropdown, setShowDiplomDropdown] = useState(false);
+    // const [showDiplomDropdown, setShowDiplomDropdown] = useState(false);
     const [showMobileDiplomDropdown, setShowMobileDiplomDropdown] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     
