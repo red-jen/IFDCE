@@ -7,7 +7,7 @@ export default function Cards() {
             desc: "Formations diplômantes : technicien et TS, Licences et Masters professionnels 100% en ligne - Validation des acquis de l'expérience : accompagnement personnalisé - Formations certifiantes dans divers domaines : droit, économie, management, informatique, infographie, etc. - Conseil en ingénierie de formation et accompagnement des entreprises",
             img: "https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
             href: "javascript:void(0)",
-            note: "Ajoutez Doctorat, MBA ici dans les diplômes :"
+            note: "MBA:"
         },
         {
             title: "Pourquoi choisir IFDCE ?",
