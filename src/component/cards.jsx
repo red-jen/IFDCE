@@ -62,14 +62,14 @@ export default function Cards() {
                                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
                                     {posts[0].desc}
                                 </p>
-                                {posts[0].note && (
-                                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
-                                        <p className="text-yellow-800 font-medium">{posts[0].note}</p>
-                                    </div>
-                                )}
-                                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                                {/* {posts[0].note && (     // <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                                    //     <p className="text-yellow-800 font-medium">{posts[0].note}</p>
+                                    // </div>
+                               
+                                )} */}
+                                {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
                                     En savoir plus
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>
