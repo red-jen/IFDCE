@@ -109,7 +109,7 @@ export default function Contact() {
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-900">Téléphone</h3>
                                     <p className="text-gray-600">
-                                        +212 0665654031<br />
+                                        +212 665654031<br />
                                         {/* WhatsApp Business disponible */}
                                     </p>
                                 </div>
