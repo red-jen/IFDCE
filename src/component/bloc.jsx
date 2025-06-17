@@ -1,7 +1,17 @@
 import photograph from '../assets/photograph.png';
+import { useNavbar } from '../context/NavbarContext';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function Bloc() {
+    const { setShowDiplomDropdown } = useNavbar();
+    
+    const handleDiscoverClick = () => {
+        setShowDiplomDropdown(true);
+        // Scroll to navbar
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
     return (
         <section 
             style={{
@@ -33,12 +43,14 @@ export default function Bloc() {
                 </div>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <button  
+                     onClick={handleDiscoverClick}
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Découvrir nos formations
                     </button>
-                    <button className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                    <Link to="/authentification" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
                         Formations en présentiel
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
