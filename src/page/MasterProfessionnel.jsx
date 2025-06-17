@@ -1,7 +1,13 @@
 import React from 'react';
 import { Brain, Users, Award, Banknote, Calculator, Building2, Home, Palette, Construction, GraduationCap } from 'lucide-react';
 import { button } from 'framer-motion/client';
+import { 
 
+    Shield,
+    Leaf,
+    TrendingUp,
+    UserCheck
+} from "lucide-react";
 const MasterProfessionnel = () => {
 const programs = [
     {
@@ -92,7 +98,62 @@ const programs = [
         textColor: "text-orange-700",
         image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
         category: "Ingénierie"
-    }
+    },
+    {
+    id: 9,
+    title: "MASTER PROFESSIONNEL CYBERSÉCURITÉ ET MANAGEMENT DES RISQUES NUMÉRIQUES",
+    description: "Formation d'expert en cybersécurité pour analyser, concevoir et mettre en œuvre des stratégies de protection des systèmes d'information. Expertise en audit sécuritaire, gestion de crise cyber et conformité réglementaire...",
+    icon: <Shield className="w-8 h-8" />,
+    color: "from-red-500 to-red-600",
+    bgColor: "bg-red-50",
+    textColor: "text-red-700",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    category: "Informatique"
+},
+{
+    id: 10,
+    title: "MASTER PROFESSIONNEL DÉVELOPPEMENT DURABLE ET TRANSITION ÉNERGÉTIQUE",
+    description: "Programme spécialisé dans la gestion de projets environnementaux et la transition énergétique. Formation aux enjeux climatiques, économie verte, et pilotage de projets durables dans les organisations...",
+    icon: <Leaf className="w-8 h-8" />,
+    color: "from-emerald-500 to-green-600",
+    bgColor: "bg-emerald-50",
+    textColor: "text-emerald-700",
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    category: "Environnement"
+},
+{
+    id: 11,
+    title: "MASTER PROFESSIONNEL MARKETING DIGITAL ET E-BUSINESS",
+    description: "Formation avancée en stratégies marketing digitales, transformation numérique et e-commerce. Expertise en data marketing, growth hacking, marketing automation et gestion d'écosystèmes digitaux...",
+    icon: <TrendingUp className="w-8 h-8" />,
+    color: "from-violet-500 to-purple-600",
+    bgColor: "bg-violet-50",
+    textColor: "text-violet-700",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    category: "Marketing"
+},
+{
+    id: 12,
+    title: "MASTER PROFESSIONNEL RESSOURCES HUMAINES ET TRANSFORMATION DIGITALE",
+    description: "Programme spécialisé en gestion des ressources humaines à l'ère numérique. Formation aux nouvelles pratiques RH, management à distance, SIRH, analytics RH et conduite du changement organisationnel...",
+    icon: <UserCheck className="w-8 h-8" />,
+    color: "from-cyan-500 to-blue-600",
+    bgColor: "bg-cyan-50",
+    textColor: "text-cyan-700",
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    category: "Ressources Humaines"
+},
+{
+    id: 13,
+    title: "MASTER PROFESSIONNEL INTELLIGENCE ARTIFICIELLE ET DATA SCIENCE",
+    description: "Formation d'expert en intelligence artificielle et science des données. Maîtrise du machine learning, deep learning, big data analytics et développement de solutions IA pour l'entreprise et la recherche...",
+    icon: <Brain className="w-8 h-8" />,
+    color: "from-slate-500 to-gray-600",
+    bgColor: "bg-slate-50",
+    textColor: "text-slate-700",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    category: "Intelligence Artificielle"
+}
 ];
 
   const categories = ["Tous", "Psychologie", "Management", "Coaching", "Finance", "Business", "Design", "Ingénierie"];
