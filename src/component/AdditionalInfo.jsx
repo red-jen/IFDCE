@@ -36,11 +36,12 @@ export default function AdditionalInfo() {
 
                     <div className="text-center p-6 bg-white rounded-lg shadow-sm">
                         <div className="w-12 h-12 bg-indigo-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                            <span className="text-indigo-600 font-bold">D</span>
+                            <span className="text-indigo-600 font-bold">M</span>
                         </div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Doctorat</h4>
+                        <h4 className="font-semibold text-gray-800 mb-2">Master</h4>
                         <p className="text-gray-600 text-sm">Recherche et expertise</p>
                     </div>
+                    
                 </div>
             </div>
         </section>
