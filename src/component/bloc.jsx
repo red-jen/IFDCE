@@ -23,9 +23,7 @@ export default function Bloc() {
                     <span className="block text-blue-300">de Compétences et d'Excellence</span>
                 </h1>
                 
-                <p className="text-xl md:text-2xl text-blue-100 mb-8 font-light">
-                    Complétez le nom complet de l'institut
-                </p>
+              
                 
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8">
                     <p className="text-lg text-white/90">
