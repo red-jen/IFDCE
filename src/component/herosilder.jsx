@@ -98,8 +98,11 @@ export default function ImageSlider() {
         <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center transform transition-all duration-1000 delay-1000 ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
         }`}>
-          <div
-               onClick={() => setShowDiplomDropdown(true)}
+          <Link
+            to="/authentification"
+          >
+            <div
+              //  onClick={() => setShowDiplomDropdown(false)}
             className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl hover:shadow-blue-500/30 border border-blue-500/30 overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -109,6 +112,7 @@ export default function ImageSlider() {
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </div>
+          </Link>
           
           <Link
             to="/VAEPage"
