@@ -33,7 +33,7 @@ export default function Stats() {
                         Savoir plus
                     </button>
                 </div>
-                <div className="mt-12">
+                {/* <div className="mt-12">
                     <ul className="flex flex-col items-center justify-center gap-y-10 sm:flex-row sm:flex-wrap lg:divide-x">
                         {stats.map((item, idx) => (
                             <li key={idx} className="text-center px-12 md:px-16">
@@ -42,7 +42,7 @@ export default function Stats() {
                             </li>
                         ))}
                     </ul>
-                </div>
+                </div> */}
             </div>
         </section>
     );
