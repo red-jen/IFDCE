@@ -1,5 +1,13 @@
 import React from 'react';
 import { BookOpen, Building2, Users, PenTool, Monitor , Truck, Hotel } from 'lucide-react';
+import { 
+ 
+  Settings, 
+  Wifi, 
+  HardHat, 
+  Zap, 
+  CircuitBoard 
+} from "lucide-react";
 import { href } from 'react-router-dom';
 import { Link, useLocation } from "react-router-dom";
 
@@ -75,7 +83,57 @@ const Technicien = () => {
       textColor: "text-rose-700",
       image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
     },
-  ];
+    {
+  id: 8,
+  title: "Technicien en Maintenance Industrielle",
+  description: "Formation complète en maintenance préventive et corrective des équipements industriels. Maîtrise des techniques de diagnostic, réparation et optimisation des machines de production.",
+  icon: <Settings className="w-8 h-8" />,
+  color: "from-green-500 to-green-600",
+  bgColor: "bg-green-50",
+  textColor: "text-green-700",
+  image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop"
+},
+{
+  id: 9,
+  title: "Technicien Réseaux et Télécommunications",
+  description: "Spécialisation dans l'installation, la configuration et la maintenance des réseaux informatiques et systèmes de télécommunications. Compétences en sécurité réseau et administration système.",
+  icon: <Wifi className="w-8 h-8" />,
+  color: "from-purple-500 to-purple-600",
+  bgColor: "bg-purple-50",
+  textColor: "text-purple-700",
+  image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop"
+},
+{
+  id: 10,
+  title: "Technicien en Génie Civil",
+  description: "Formation aux techniques de construction, étude de sols, calcul de structures et gestion de projets BTP. Expertise en lecture de plans et contrôle qualité des ouvrages.",
+  icon: <HardHat className="w-8 h-8" />,
+  color: "from-yellow-500 to-yellow-600",
+  bgColor: "bg-yellow-50",
+  textColor: "text-yellow-700",
+  image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop"
+},
+{
+  id: 11,
+  title: "Technicien en Énergies Renouvelables",
+  description: "Spécialiste de l'installation et maintenance des systèmes solaires, éoliens et autres technologies vertes. Formation aux normes environnementales et efficacité énergétique.",
+  icon: <Zap className="w-8 h-8" />,
+  color: "from-emerald-500 to-emerald-600",
+  bgColor: "bg-emerald-50",
+  textColor: "text-emerald-700",
+  image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=300&fit=crop"
+},
+{
+  id: 12,
+  title: "Technicien en Électronique Industrielle",
+  description: "Maîtrise des systèmes électroniques industriels, automatismes et programmation d'automates. Compétences en diagnostic de pannes et optimisation des processus automatisés.",
+  icon: <CircuitBoard className="w-8 h-8" />,
+  color: "from-indigo-500 to-indigo-600",
+  bgColor: "bg-indigo-50",
+  textColor: "text-indigo-700",
+  image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop"
+},
+];
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
