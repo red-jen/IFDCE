@@ -13,6 +13,7 @@ import {
   TrendingUp
 } from "lucide-react";
 import addimge from "../assets/jefferson-sees-QGOWg4m3C7o-unsplash.jpg";
+import { Link } from 'react-router-dom';
 import passion from "../assets/passion.jpg";
 
 const TechnicienSuperieur = () => {
@@ -284,14 +285,14 @@ const TechnicienSuperieur = () => {
                 </div>
                 
                 {/* Action Buttons */}
-                <div className="flex space-x-3">
+                {/* <div className="flex space-x-3">
                   <button className={`flex-1 bg-gradient-to-r ${program.color} text-white py-3 px-4 rounded-lg text-sm font-semibold hover:opacity-90 transition-all duration-200 transform hover:scale-105 shadow-md`}>
                     Découvrir
                   </button>
                   <button className="px-4 py-3 border-2 border-gray-200 text-gray-700 rounded-lg text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 group-hover:border-gray-400">
                     Info
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Hover Effect Border */}
@@ -361,9 +362,11 @@ const TechnicienSuperieur = () => {
                 Rejoignez nos formations de technicien supérieur et développez l'expertise nécessaire pour diriger et innover dans votre domaine
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/authentification">
                 <button className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                   Demander des informations
                 </button>
+                </Link>
                 <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
                   Télécharger le programme
                 </button>
