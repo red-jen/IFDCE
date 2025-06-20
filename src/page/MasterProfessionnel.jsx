@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Brain, Users, Award, Banknote, Calculator, Building2, Home, Palette, Construction, GraduationCap } from 'lucide-react';
 import { button } from 'framer-motion/client';
 import { 
@@ -434,9 +435,11 @@ const programs = [
               Nos Masters Professionnels vous ouvrent les portes des postes à haute responsabilité
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/authentification">
               <button className="bg-white text-violet-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Candidater maintenant
               </button>
+              </Link>
               <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-violet-600 transition-all duration-300 transform hover:scale-105">
                 Documentation complète
               </button>
