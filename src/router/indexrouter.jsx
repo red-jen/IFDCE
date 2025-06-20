@@ -18,6 +18,7 @@ import Techaidecomptable from "../page/techaidecomptable.jsx"; // Add this impor
 import LicenceProfessionnelle from "../page/LicenceProfessionnelle.jsx"; // Add this import
 import VAEPage from "../page/VAEPage.jsx"; // Add this import
 import MasterProfessionnel from "../page/MasterProfessionnel.jsx"; // Add this import
+import Profile from "../page/Profile.jsx"; // Add this import
 
 export const router = createBrowserRouter([
     {
@@ -105,7 +106,7 @@ export const router = createBrowserRouter([
                 path: "/profile",
                 element: (
                     <ProtectedRoute>
-                        <div>User Profile (Create this component)</div>
+                        <Profile />
                     </ProtectedRoute>
                 ),
             },
