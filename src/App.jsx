@@ -3,13 +3,17 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./router/indexrouter";
 import { AuthProvider } from './context/AuthContext';
 import { NavbarProvider } from './context/NavbarContext';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 function App() {
   return (
-    <AuthProvider>
-      <NavbarProvider>
-        <RouterProvider router={router} />
-      </NavbarProvider>
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <NavbarProvider>
+          <RouterProvider router={router} />
+        </NavbarProvider>
+      </AuthProvider>
+    </HelmetProvider>
   );
 }
 
