@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Award, BookOpen, Users } from 'lucide-react';
 import videoBackground from '../assets/istockphoto-1539130562-640_adpp_is.mp4';
+import '../tailwind.css'; // Import the CSS file
 
 export default function ImageSlider() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -47,17 +48,19 @@ export default function ImageSlider() {
       </div>
 
       {/* Main Content */}
-      <div className='z-10 text-center px-6 max-w-6xl mx-auto'>
+      <div className='z-10 text-center px-6 max-w-6xl mx-auto w-full hero-content'>
         {/* Institution Badge */}
-        <div className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8 transform transition-all duration-1000 ${
+        <div className={`inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8 transform transition-all duration-1000 hero-badge ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
         }`}>
           <Award className="w-5 h-5 text-blue-400" />
-          <span className="text-white font-medium">Institut de Formation et Développement des Compétences</span>
+          <span className="text-white font-medium">
+            Institut de Formation et Développement des Compétences
+          </span>
         </div>
 
         {/* Dynamic Main Heading */}
-        <h1 className={`text-5xl md:text-7xl font-bold mb-6 leading-tight text-white transform transition-all duration-1000 delay-200 ${
+        <h1 className={`text-7xl font-bold mb-6 leading-tight text-white transform transition-all duration-1000 delay-200 hero-title ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <span className="block mb-4">
@@ -69,15 +72,15 @@ export default function ImageSlider() {
         </h1>
 
         {/* Professional Subtitle */}
-        <p className={`text-xl md:text-2xl text-slate-200 mb-12 font-light max-w-4xl mx-auto leading-relaxed transform transition-all duration-1000 delay-500 ${
+        <p className={`text-2xl text-slate-200 mb-12 font-light max-w-4xl mx-auto leading-relaxed transform transition-all duration-1000 delay-500 hero-subtitle ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
         }`}>
-          Rejoignez l'excellence académique et transformez votre parcours professionnel en qualification reconnue. 
+          Rejoignez l'excellence académique et transformez votre parcours professionnel en qualification reconnue.
           <span className="text-blue-300 font-medium"> L'IFDCE vous accompagne vers la réussite.</span>
         </p>
 
         {/* Feature Highlights */}
-        <div className={`flex flex-wrap justify-center gap-8 mb-12 transform transition-all duration-1000 delay-700 ${
+        <div className={`grid grid-cols-3 gap-8 mb-12 max-w-2xl mx-auto transform transition-all duration-1000 delay-700 hero-features ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
         }`}>
           <div className="flex items-center gap-3 text-white/90">
@@ -95,34 +98,27 @@ export default function ImageSlider() {
         </div>
         
         {/* Premium CTA Buttons */}
-        <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center transform transition-all duration-1000 delay-1000 ${
+        <div className={`flex gap-6 justify-center items-center transform transition-all duration-1000 delay-1000 hero-buttons ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
         }`}>
-          <Link
-            to="/authentification"
-          >
-            <div
-              //  onClick={() => setShowDiplomDropdown(false)}
-            className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl hover:shadow-blue-500/30 border border-blue-500/30 overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            <span className="relative z-10 flex items-center gap-2"
-          >
-              Découvrir nos Programmes
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
-          </div>
+          <Link to="/authentification">
+            <div className="group relative bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 text-white px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl hover:shadow-blue-500/30 border border-blue-500/30 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                Découvrir nos Programmes
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </div>
           </Link>
           
-          <Link
-            to="/VAEPage"
-            className="group relative border-2 border-white/40 text-white hover:text-blue-900 px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl backdrop-blur-md hover:backdrop-blur-lg overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-white transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom"></div>
-            <span className="relative z-10 flex items-center gap-2">
-              Validation des Acquis (VAE)
-              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
+          <Link to="/VAEPage">
+            <div className="group relative border-2 border-white/40 text-white hover:text-blue-900 px-12 py-5 rounded-xl font-semibold text-lg transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 shadow-2xl backdrop-blur-md hover:backdrop-blur-lg overflow-hidden">
+              <div className="absolute inset-0 bg-white transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                Validation des Acquis (VAE)
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </div>
           </Link>
         </div>
 
@@ -134,14 +130,6 @@ export default function ImageSlider() {
             <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
           </div>
         </div>
-      </div>
-
-      {/* Professional Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400/40 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white/20 rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/3 left-1/6 w-1.5 h-1.5 bg-cyan-400/30 rounded-full animate-pulse delay-2000"></div>
-        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-blue-300/40 rounded-full animate-pulse delay-500"></div>
       </div>
     </section>
   );
