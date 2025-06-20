@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BookOpen, Building2, Users, PenTool, Monitor , Truck, Hotel } from 'lucide-react';
 import { 
  
@@ -131,7 +132,7 @@ const Technicien = () => {
   color: "from-indigo-500 to-indigo-600",
   bgColor: "bg-indigo-50",
   textColor: "text-indigo-700",
-  image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop"
+  image: "https://images.pexels.com/photos/32588544/pexels-photo-32588544.jpeg"
 },
 ];
 
@@ -187,7 +188,7 @@ const Technicien = () => {
                 </p>
                 
                 {/* Action Buttons */}
-                <div className="flex space-x-3">
+                {/* <div className="flex space-x-3">
                    <Link
                                                      to="/techaidecomptable">
                   <button className={`flex-1 bg-gradient-to-r ${program.color} text-white py-2 px-4 rounded-lg text-sm font-medium hover:opacity-90 transition-all duration-200 transform hover:scale-105`}>
@@ -197,7 +198,7 @@ const Technicien = () => {
                   <button className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 hover:border-gray-400 transition-all duration-200">
                     Brochure
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Hover Effect Border */}
@@ -222,9 +223,11 @@ const Technicien = () => {
                 Contactez-nous pour plus d'informations sur nos programmes de formation
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/contact" >
                 <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-200 transform hover:scale-105">
                   Nous contacter
                 </button>
+                </Link>
                 <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-200 transform hover:scale-105">
                   Télécharger la brochure
                 </button>
