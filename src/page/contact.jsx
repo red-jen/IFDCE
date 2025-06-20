@@ -184,10 +184,18 @@ className="w-6 h-6" fill="currentColor"
 
                     {/* Contact Form */}
                     <div className="bg-white p-8 rounded-lg shadow-md">
+                        <div className="bg-red-500 text-white font-bold p-4 mb-6 rounded-md text-center shadow-lg animate-pulse">
+                            ATTENTION : Ce formulaire n'est pas encore disponible
+                        </div>
                         <h2 className="text-3xl font-bold text-gray-900 mb-6">
                             Envoyez-nous un message
                         </h2>
-
+                        
+                        <div className="mb-6 p-4 bg-blue-100 border border-blue-400 text-blue-700 rounded">
+                            <p className="font-semibold">Pour nous contacter directement :</p>
+                            <p className="mt-2">Veuillez nous envoyer un email à <a href="mailto:contact@ifdce.com" className="underline font-bold hover:text-blue-800">contact@ifdce.com</a> et nous vous répondrons dans les plus brefs délais.</p>
+                        </div>
+                        
                         {success && (
                             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
                                 Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.
