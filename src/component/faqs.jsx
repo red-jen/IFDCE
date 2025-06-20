@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Faqs() {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -81,9 +82,11 @@ export default function Faqs() {
                 </div>
 
                 <div className="text-center mt-12">
+                    <Link to="/contact">
                     <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200">
                         Nous contacter pour plus d'informations
                     </button>
+                    </Link>
                 </div>
             </div>
         </section>
