@@ -41,8 +41,16 @@ export default function AdditionalInfo() {
                         <h4 className="font-semibold text-gray-800 mb-2">Master</h4>
                         <p className="text-gray-600 text-sm">Recherche et expertise</p>
                     </div>
+                  
                     
                 </div>
+                  <div className="w-full text-center p-6 md:w-1/4 h-fit justify-self-center mt-7 bg-white rounded-lg shadow-sm">
+                        <div className="w-12 h-12 bg-indigo-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                            <span className="text-indigo-600 font-bold">D</span>
+                        </div>
+                        <h4 className="font-semibold text-gray-800 mb-2">Doctorat</h4>
+                        <p className="text-gray-600 text-sm">Recherche et innovation</p>
+                    </div>
             </div>
         </section>
     );
