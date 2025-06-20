@@ -17,8 +17,8 @@ export default function Cards() {
         },
         {
             title: "Reconnaissance et Partenariat",
-            desc: "Les diplômes sont délivrés en partenariat avec des organismes français. Tous les parcours sont alignés sur les standards européens, avec une reconnaissance en France et dans l'Union Européenne.",
-            img: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            desc: "Les diplômes sont délivrés en partenariat avec des organismes français et anglais. Tous les parcours sont alignés sur les standards européens, avec une reconnaissance en France et dans l'Union Européenne.",
+            img: "https://img.freepik.com/photos-premium/etiquette-connexion-affaires-png-fond-transparent-bordure-blanche_53876-942175.jpg?w=2000",
             href: "javascript:void(0)"
         },
         {
