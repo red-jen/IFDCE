@@ -1,4 +1,5 @@
 <?php
+// filepath: c:\Users\youco\OneDrive\Bureau\IFDCE\backend\database\migrations\2025_06_03_092053_create_user_diploma_fields_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
