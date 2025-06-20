@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PhoneInput from '../component/PhoneInput';
 import axios from 'axios';
 
 export default function Authentification() {
@@ -24,6 +25,21 @@ export default function Authentification() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const totalSteps = 4;
+  const handlePhoneChange = (phoneNumber) => {
+    setFormData(prev => ({
+      ...prev,
+      phoneNumber: phoneNumber
+    }));
+    
+    // Clear phone number error if it exists
+    if (errors.phoneNumber) {
+      setErrors(prev => ({
+        ...prev,
+        phoneNumber: ''
+      }));
+    }
+  };
+
 
   useEffect(() => {
     axios.defaults.baseURL = 'http://localhost:8000/';
@@ -352,18 +368,14 @@ export default function Authentification() {
         <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-bold mb-2">
           Phone Number *
         </label>
-        <input
-          type="tel"
-          id="phoneNumber"
-          name="phoneNumber"
+               <PhoneInput
           value={formData.phoneNumber}
-          onChange={handleChange}
-          className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
-            errors.phoneNumber ? 'border-red-500' : ''
-          }`}
-          placeholder="Enter your phone number"
+          onChange={handlePhoneChange}
         />
-        {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber[0]}</p>}
+        {errors.phoneNumber && <p className="mt-1 text-sm text-red-600">{errors.phoneNumber}</p>}
+        <p className="mt-1 text-xs text-gray-500">
+          Sélectionnez votre pays et entrez votre numéro de téléphone
+        </p>
       </div>
     </div>
   );
